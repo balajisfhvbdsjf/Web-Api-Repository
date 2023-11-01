@@ -131,7 +131,6 @@ namespace Web_Api_Repository.Controllers
                 Address = employee.Address,
                 Position = employee.Position,
                 Phone = employee.Phone,
-                DOB = employee.DOB,
 
             };
             return Ok(response);
