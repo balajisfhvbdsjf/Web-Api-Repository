@@ -19,6 +19,11 @@ namespace Web_Api_Repository.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateEmployee([FromBody] UpdateEmployeeRequestDto request)
         {
+            if (request.Rating < 0 || request.Rating > 4)
+            {
+                return BadRequest("Rating should be in the range of 0 to 4.");
+            }
+
             var emploee = new Employee
             {
                 Name = request.Name,
@@ -27,6 +32,8 @@ namespace Web_Api_Repository.Controllers
                 Position = request.Position,
                 Phone = request.Phone,
                 DOB = request.DOB,
+                Rating = request.Rating,
+                
 
             };
             await _employeeService.CreateAsync(emploee);
@@ -39,6 +46,7 @@ namespace Web_Api_Repository.Controllers
                 Position = request.Position,
                 Phone = request.Phone,
                 DOB = request.DOB,
+                Rating = emploee.Rating
 
             };
             return Ok(response);
@@ -59,6 +67,7 @@ namespace Web_Api_Repository.Controllers
                     Position = employes.Position,
                     Phone = employes.Phone,
                     DOB = employes.DOB,
+                    Rating = employes.Rating,
                 });
             }
             return Ok(response);
@@ -80,6 +89,7 @@ namespace Web_Api_Repository.Controllers
                 Position = existingEmployee.Position,
                 Phone = existingEmployee.Phone,
                 DOB = existingEmployee.DOB,
+                Rating = existingEmployee.Rating,
 
             };
             return Ok(response);
@@ -96,6 +106,7 @@ namespace Web_Api_Repository.Controllers
                 Position = request.Position,
                 Phone = request.Phone,
                 DOB = request.DOB,
+                Rating = request.Rating,
 
             };
             employee6 = await _employeeService.UpdateAsync(employee6);
@@ -112,6 +123,7 @@ namespace Web_Api_Repository.Controllers
                 Position = employee6.Position,
                 Phone = employee6.Phone,
                 DOB = employee6.DOB,
+                Rating = employee6.Rating,
             };
             return Ok(response);
         }
@@ -131,6 +143,7 @@ namespace Web_Api_Repository.Controllers
                 Address = employee.Address,
                 Position = employee.Position,
                 Phone = employee.Phone,
+                Rating = employee.Rating,
 
             };
             return Ok(response);

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Web_Api_Repository.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -21,7 +21,8 @@ namespace Web_Api_Repository.Migrations
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Position = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Phone = table.Column<int>(type: "int", nullable: false),
-                    DOB = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    DOB = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Rating = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -38,7 +39,8 @@ namespace Web_Api_Repository.Migrations
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Phone = table.Column<int>(type: "int", nullable: false),
                     Age = table.Column<int>(type: "int", nullable: false),
-                    DOB = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    DOB = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

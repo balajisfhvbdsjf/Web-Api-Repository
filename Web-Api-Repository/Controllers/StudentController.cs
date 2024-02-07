@@ -29,6 +29,7 @@ namespace Web_Api_Repository.Controllers
                 Phone = request.Phone,
                 Age = request.Age,
                 DOB = request.DOB,
+                Password = request.Password,
 
             };
             await _studentService.CreateAsync(student);
@@ -40,6 +41,7 @@ namespace Web_Api_Repository.Controllers
                 Phone = request.Phone,
                 Age = request.Age,
                 DOB = request.DOB,
+                Password = request.Password,
 
             };
             return Ok(response);
@@ -59,7 +61,7 @@ namespace Web_Api_Repository.Controllers
                     Phone = students.Phone,
                     Age = students.Age,
                     DOB = students.DOB,
-
+                    Password= students.Password,
 
                 });
             }
@@ -82,6 +84,7 @@ namespace Web_Api_Repository.Controllers
                 Phone = existingStudent.Phone,
                 Age = existingStudent.Age,
                 DOB = existingStudent.DOB,
+                Password = existingStudent.Password,    
 
 
             };
@@ -99,6 +102,7 @@ namespace Web_Api_Repository.Controllers
                 Phone = request.Phone,
                 Age = request.Age,
                 DOB = request.DOB,
+                Password = request.Password,
             };
             student5 = await _studentService.UpdateAsync(student5);
             if (student5 == null)
@@ -113,6 +117,7 @@ namespace Web_Api_Repository.Controllers
                 Phone = student5.Phone,
                 Age = student5.Age,
                 DOB = student5.DOB,
+                Password = student5.Password,
             };
             return Ok(response);
         }
@@ -132,7 +137,8 @@ namespace Web_Api_Repository.Controllers
                 Email = student6.Email,
                 Phone = student6.Phone,
                 Age = student6.Age,
-                DOB = student6.DOB
+                DOB = student6.DOB,
+                Password = student6.Password,
 
             };
             return Ok(response);    

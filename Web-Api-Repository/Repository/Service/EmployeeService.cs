@@ -20,7 +20,7 @@ namespace Web_Api_Repository.Repository.Service
             await _dbContext.SaveChangesAsync();    
             return employee;
         }
-        public async Task<IEnumerable<Employee>>GetAllAsync()
+        public async Task<IEnumerable<Employee>> GetAllAsync()
         {
             return await _dbContext.Employees.ToListAsync();
         }

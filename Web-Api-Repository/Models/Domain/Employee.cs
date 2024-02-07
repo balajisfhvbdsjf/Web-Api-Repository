@@ -9,6 +9,7 @@
         public string Position { get; set; }
         public int Phone { get; set; }
         public DateTime DOB { get; set; }
+        public int Rating { get; set; }
 
     }
 }

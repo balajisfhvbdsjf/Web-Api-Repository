@@ -50,6 +50,9 @@ namespace Web_Api_Repository.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Employees");
@@ -74,6 +77,10 @@ namespace Web_Api_Repository.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
